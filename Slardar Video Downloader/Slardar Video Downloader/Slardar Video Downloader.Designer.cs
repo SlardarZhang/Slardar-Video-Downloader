@@ -57,8 +57,8 @@
             this.muteCheckBox.Location = new System.Drawing.Point(930, 14);
             this.muteCheckBox.Name = "muteCheckBox";
             this.muteCheckBox.Size = new System.Drawing.Size(70, 25);
-            this.muteCheckBox.TabIndex = 8;
-            this.muteCheckBox.Text = "Mute";
+            this.muteCheckBox.TabIndex = 2;
+            this.muteCheckBox.Text = "&Mute";
             this.muteCheckBox.UseVisualStyleBackColor = true;
             this.muteCheckBox.CheckedChanged += new System.EventHandler(this.muteCheckBox_CheckedChanged);
             // 
@@ -67,12 +67,12 @@
             this.urlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.urlTextBox.Location = new System.Drawing.Point(61, 12);
+            this.urlTextBox.Location = new System.Drawing.Point(83, 12);
             this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(863, 29);
-            this.urlTextBox.TabIndex = 7;
+            this.urlTextBox.Size = new System.Drawing.Size(841, 29);
+            this.urlTextBox.TabIndex = 1;
             this.urlTextBox.Text = "https://www.slardar.net";
-            this.urlTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.urlTextBox_KeyPressed);
+            this.urlTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlTextBox_KeyDown);
             // 
             // urlLabel
             // 
@@ -81,9 +81,9 @@
             this.urlLabel.Location = new System.Drawing.Point(9, 15);
             this.urlLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.urlLabel.Name = "urlLabel";
-            this.urlLabel.Size = new System.Drawing.Size(44, 21);
-            this.urlLabel.TabIndex = 6;
-            this.urlLabel.Text = "URL:";
+            this.urlLabel.Size = new System.Drawing.Size(66, 21);
+            this.urlLabel.TabIndex = 0;
+            this.urlLabel.Text = "URL:(&D)";
             // 
             // mainLayoutPanel
             // 
@@ -91,7 +91,7 @@
             this.mainLayoutPanel.Location = new System.Drawing.Point(0, 52);
             this.mainLayoutPanel.Name = "mainLayoutPanel";
             this.mainLayoutPanel.Size = new System.Drawing.Size(1008, 677);
-            this.mainLayoutPanel.TabIndex = 7;
+            this.mainLayoutPanel.TabIndex = 3;
             // 
             // Slardar_Video_Downloader
             // 
