@@ -28,24 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.addressPanel = new System.Windows.Forms.Panel();
+            this.SniffComboBox = new System.Windows.Forms.ComboBox();
+            this.SniffWebLable = new System.Windows.Forms.Label();
             this.muteCheckBox = new System.Windows.Forms.CheckBox();
             this.urlTextBox = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.mainLayoutPanel = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.addressPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // addressPanel
             // 
-            this.panel1.Controls.Add(this.muteCheckBox);
-            this.panel1.Controls.Add(this.urlTextBox);
-            this.panel1.Controls.Add(this.urlLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 52);
-            this.panel1.TabIndex = 6;
+            this.addressPanel.Controls.Add(this.SniffComboBox);
+            this.addressPanel.Controls.Add(this.SniffWebLable);
+            this.addressPanel.Controls.Add(this.muteCheckBox);
+            this.addressPanel.Controls.Add(this.urlTextBox);
+            this.addressPanel.Controls.Add(this.urlLabel);
+            this.addressPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addressPanel.Location = new System.Drawing.Point(0, 0);
+            this.addressPanel.Name = "addressPanel";
+            this.addressPanel.Size = new System.Drawing.Size(1008, 82);
+            this.addressPanel.TabIndex = 6;
+            // 
+            // SniffComboBox
+            // 
+            this.SniffComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SniffComboBox.FormattingEnabled = true;
+            this.SniffComboBox.Items.AddRange(new object[] {
+            "Youtube",
+            "M3U8",
+            "Media",
+            "Universal"});
+            this.SniffComboBox.Location = new System.Drawing.Point(136, 43);
+            this.SniffComboBox.Name = "SniffComboBox";
+            this.SniffComboBox.Size = new System.Drawing.Size(146, 29);
+            this.SniffComboBox.TabIndex = 4;
+            // 
+            // SniffWebLable
+            // 
+            this.SniffWebLable.AutoSize = true;
+            this.SniffWebLable.Location = new System.Drawing.Point(5, 46);
+            this.SniffWebLable.Name = "SniffWebLable";
+            this.SniffWebLable.Size = new System.Drawing.Size(125, 21);
+            this.SniffWebLable.TabIndex = 3;
+            this.SniffWebLable.Text = "Sniff Template:";
             // 
             // muteCheckBox
             // 
@@ -54,31 +81,31 @@
             this.muteCheckBox.AutoSize = true;
             this.muteCheckBox.Checked = true;
             this.muteCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.muteCheckBox.Location = new System.Drawing.Point(930, 14);
+            this.muteCheckBox.Location = new System.Drawing.Point(288, 45);
             this.muteCheckBox.Name = "muteCheckBox";
             this.muteCheckBox.Size = new System.Drawing.Size(70, 25);
             this.muteCheckBox.TabIndex = 2;
             this.muteCheckBox.Text = "&Mute";
             this.muteCheckBox.UseVisualStyleBackColor = true;
-            this.muteCheckBox.CheckedChanged += new System.EventHandler(this.muteCheckBox_CheckedChanged);
+            this.muteCheckBox.CheckedChanged += new System.EventHandler(this.MuteCheckBox_CheckedChanged);
             // 
             // urlTextBox
             // 
             this.urlTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.urlTextBox.Location = new System.Drawing.Point(83, 12);
+            this.urlTextBox.Location = new System.Drawing.Point(79, 6);
             this.urlTextBox.Name = "urlTextBox";
-            this.urlTextBox.Size = new System.Drawing.Size(841, 29);
+            this.urlTextBox.Size = new System.Drawing.Size(917, 29);
             this.urlTextBox.TabIndex = 1;
             this.urlTextBox.Text = "https://www.slardar.net";
-            this.urlTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlTextBox_KeyDown);
+            this.urlTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.URLTextBox_KeyDown);
             // 
             // urlLabel
             // 
             this.urlLabel.AutoSize = true;
             this.urlLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.urlLabel.Location = new System.Drawing.Point(9, 15);
+            this.urlLabel.Location = new System.Drawing.Point(5, 9);
             this.urlLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.urlLabel.Name = "urlLabel";
             this.urlLabel.Size = new System.Drawing.Size(66, 21);
@@ -88,9 +115,9 @@
             // mainLayoutPanel
             // 
             this.mainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainLayoutPanel.Location = new System.Drawing.Point(0, 52);
+            this.mainLayoutPanel.Location = new System.Drawing.Point(0, 82);
             this.mainLayoutPanel.Name = "mainLayoutPanel";
-            this.mainLayoutPanel.Size = new System.Drawing.Size(1008, 677);
+            this.mainLayoutPanel.Size = new System.Drawing.Size(1008, 647);
             this.mainLayoutPanel.TabIndex = 3;
             // 
             // Slardar_Video_Downloader
@@ -99,26 +126,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.mainLayoutPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.addressPanel);
             this.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Slardar_Video_Downloader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Slardar Video Downloader";
             this.Load += new System.EventHandler(this.Slardar_Video_Downloader_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.addressPanel.ResumeLayout(false);
+            this.addressPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel addressPanel;
         private System.Windows.Forms.CheckBox muteCheckBox;
         private System.Windows.Forms.TextBox urlTextBox;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Panel mainLayoutPanel;
+        private System.Windows.Forms.ComboBox SniffComboBox;
+        private System.Windows.Forms.Label SniffWebLable;
     }
 }
 
